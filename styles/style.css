@@ -1,0 +1,125 @@
+@font-face {
+  font-family: SFPro;
+  src: url("/fonts/SF-Pro-Display-Regular.otf");
+}
+
+@font-face {
+  font-family: SFPro;
+  src: url("/fonts/SF-Pro-Display-Heavy.otf");
+  font-weight: bold;
+}
+
+/* Set up the HTML and Body */
+
+html,
+body {
+  box-sizing: content-box;
+  width: auto;
+  font-family: SFPro;
+}
+
+body {
+  padding: 64px 460px;
+  overflow-x: hidden;
+}
+
+header {
+  margin-bottom: 64px;
+}
+
+.heading-title {
+  font-size: 30px;
+}
+
+/* Parent div of accordions, make it stacked and center aligned in the middle */
+.parks {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+/* Accordion styling */
+
+.accordion {
+  font-size: 16px;
+  margin: 12px 0;
+}
+
+.accordion__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.accordion__icon {
+  position: absolute;
+  right: 0;
+  top: 4px;
+  transform: rotate(0deg);
+  width: 20px;
+  height: 20px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.accordion__heading {
+  font-family: SFPro;
+  position: relative;
+  background-color: white;
+  padding: 0;
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  padding-bottom: 14px;
+  border-bottom: 1px solid black;
+}
+.accordion__heading.open .accordion__icon {
+  transform: rotate(180deg);
+  transition: 0.3s;
+}
+
+.accordion__heading.open + .accordion__content {
+  max-height: 600px;
+  transition: 0.5s;
+}
+.accordion__heading:hover {
+  color: grey;
+}
+
+.accordion__description {
+  color: black;
+  margin-bottom: 0;
+}
+
+#expand-collapse-all {
+  font-family: SFPro;
+  font-size: 16px;
+  background-color: white;
+  height: 40px;
+  width: 100px;
+  outline: none;
+  border: 1px solid rgb(132, 132, 255);
+  color: rgb(132, 132, 255);
+  cursor: pointer;
+  align-self: flex-end;
+  margin-bottom: 20px;
+  padding: 4px;
+}
+
+@media only screen and (max-width: 1400px) {
+  body {
+    padding: 64px 140px;
+  }
+}
+
+@media only screen and (max-width: 764px) {
+  body {
+    padding: 64px 20px;
+  }
+}
