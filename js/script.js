@@ -19,6 +19,7 @@ const callback = (mutationList) => {
 
 const observer = new MutationObserver(callback);
 
+// Attach event listener for each accordion
 accordion.forEach((accord) => {
   accord.addEventListener("click", () => {
     expanded = accord.getAttribute("aria-expanded") === "true";
@@ -28,6 +29,7 @@ accordion.forEach((accord) => {
   observer.observe(accord, { attributes: true });
 });
 
+// Attach event listener for button to toggle all accordions
 expandCollapseAll.addEventListener("click", (e) => {
   e.preventDefault();
 
